@@ -43,13 +43,15 @@ export function Header() {
     >
       <Link
         href="/"
-        className={`font-display text-[14px] tracking-[0.14em] ${solid ? "text-ink" : "text-white"}`}
+        className={`font-display text-[12px] tracking-[0.14em] sm:text-[14px] ${solid ? "text-ink" : "text-white"}`}
       >
         NORTH LEATHER
       </Link>
-      <nav className="flex items-center gap-8">
-        {LINKS.map((l) => (
-          <NavLink key={l.href} href={l.href} label={l.label} dark={solid} />
+      <nav className="flex items-center gap-4 sm:gap-8">
+        {LINKS.map((l, i) => (
+          <span key={l.href} className={i === 0 ? "hidden sm:inline-flex" : "inline-flex"}>
+            <NavLink href={l.href} label={l.label} dark={solid} />
+          </span>
         ))}
       </nav>
     </motion.header>
