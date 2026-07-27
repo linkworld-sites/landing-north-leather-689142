@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   description:
     "Full-grain, hand-stitched leather bags built to age beautifully and last a lifetime. One bag. Ten years. No warranty needed.",
   alternates: { canonical: "/" },
+  verification: { google: "WlJ66mw7eszwjs5WXh-HAJ_3n22gXQA1yf23ABf0enE" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -8,6 +8,7 @@ export interface FaqItem {
 
 export interface SiteMeta {
   faq: FaqItem[];
+  faqPages?: Record<string, FaqItem[]>;
   organization: { name: string; url: string; description?: string };
 }
 

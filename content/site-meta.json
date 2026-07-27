@@ -17,6 +17,22 @@
       "a": "Not much, and that's by design. Keep it out of standing water and away from direct heat, and wipe off dust or grit with a dry cloth now and then. Beyond that, the leather takes care of itself — it darkens, softens, and picks up character from use."
     }
   ],
+  "faqPages": {
+    "2026-07-27-full-grain-leather-bag-care-and-lifespan": [
+      {
+        "q": "How long does a full-grain leather bag actually last?",
+        "a": "A well-made full-grain leather bag typically lasts ten to twenty years or more with normal use — often decades, since full-grain hide is repaired rather than replaced. It's a bag that ages with you, rather than one you rebuy every couple of seasons."
+      },
+      {
+        "q": "How do I care for a full-grain leather bag?",
+        "a": "Not much is required, and that's by design. Keep it out of standing water and away from direct heat (radiators, car dashboards in summer), and wipe off dust or grit with a dry cloth now and then. Beyond that, the leather takes care of itself — it darkens, softens, and picks up character from actual use."
+      },
+      {
+        "q": "Does a full-grain leather bag need breaking in?",
+        "a": "It softens naturally with carrying, but there's no formal break-in required. Saddle-stitched seams and solid brass hardware hold their shape from day one; what changes over time is the leather itself, which grows more supple and develops a deeper color wherever your hand rests."
+      }
+    ]
+  },
   "organization": {
     "name": "North Leather",
     "url": "https://0b12a1e0.run.linkworld.ai",

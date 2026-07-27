@@ -46,7 +46,11 @@ export default async function BlogPost({
     publisher: { "@type": "Organization", name: "North Leather" },
   };
 
-  const faq = post.slug === FAQ_SLUG ? getSiteMeta()?.faq ?? [] : [];
+  const siteMeta = getSiteMeta();
+  const faq =
+    post.slug === FAQ_SLUG
+      ? siteMeta?.faq ?? []
+      : siteMeta?.faqPages?.[post.slug] ?? [];
   const faqJsonLd = faq.length
     ? {
         "@context": "https://schema.org",
