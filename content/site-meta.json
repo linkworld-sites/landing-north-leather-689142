@@ -1,0 +1,25 @@
+{
+  "faq": [
+    {
+      "q": "Where does North Leather ship?",
+      "a": "We ship to customers browsing from our shop. If you're unsure whether we reach your region, place the order — checkout only confirms a shipment we can actually fulfill, so you won't be charged for a delivery we can't make."
+    },
+    {
+      "q": "How long does it take for an order to ship?",
+      "a": "Every bag ships from our workshop, not a warehouse. Once an order comes in, we check it against stock, pack it by hand, and get it out the door — we don't hold orders waiting to batch them."
+    },
+    {
+      "q": "What is North Leather's returns policy?",
+      "a": "If a bag doesn't work out, get in touch and we'll walk you through it. Because every piece is cut and stitched from a real hide with its own grain and marks, we handle returns individually — a person looks at your specific case and tells you exactly what to do next."
+    },
+    {
+      "q": "Does the leather need special care after it arrives?",
+      "a": "Not much, and that's by design. Keep it out of standing water and away from direct heat, and wipe off dust or grit with a dry cloth now and then. Beyond that, the leather takes care of itself — it darkens, softens, and picks up character from use."
+    }
+  ],
+  "organization": {
+    "name": "North Leather",
+    "url": "https://0b12a1e0.run.linkworld.ai",
+    "description": "North Leather makes full-grain, hand-stitched leather bags built to age beautifully and last a lifetime."
+  }
+}
