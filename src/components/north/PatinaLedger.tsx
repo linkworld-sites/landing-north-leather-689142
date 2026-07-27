@@ -13,11 +13,11 @@ import {
 import { FadeUp } from "./FadeUp";
 
 const FRAMES = [
-  { tick: "0", label: "day_01", src: "/images/hero.png", caption: "// stiff at the fold. bright at the edge. exactly as it left the bench." },
-  { tick: "6mo", label: "month_06", src: "/images/material.png", caption: "// the strap darkens where your hand rests." },
-  { tick: "2yr", label: "year_02", src: "/images/detail.png", caption: "// corners round, they don't crack." },
-  { tick: "5yr", label: "year_05", src: "/images/process.png", caption: "// grain deepens like a sun-worn deck rail." },
-  { tick: "10yr", label: "year_10", src: "/images/hero.png", caption: "// ten years in, and it's only just broken in." },
+  { tick: "0", label: "day_01", src: "/images/products/product-0.jpg", caption: "// stiff at the fold. bright at the edge. exactly as it left the bench." },
+  { tick: "6mo", label: "month_06", src: "/images/products/product-1.jpg", caption: "// the strap darkens where your hand rests." },
+  { tick: "2yr", label: "year_02", src: "/images/products/product-2.jpg", caption: "// corners round, they don't crack." },
+  { tick: "5yr", label: "year_05", src: "/images/products/product-3.jpg", caption: "// grain deepens like a sun-worn deck rail." },
+  { tick: "10yr", label: "year_10", src: "/images/products/product-0.jpg", caption: "// ten years in, and it's only just broken in." },
 ];
 
 const N = FRAMES.length;
