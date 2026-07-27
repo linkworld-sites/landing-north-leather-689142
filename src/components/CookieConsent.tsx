@@ -36,17 +36,17 @@ export function CookieConsent() {
   };
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[100] border-t border-black/10 bg-white/95 p-4 text-sm text-black backdrop-blur md:p-5">
+    <div className="fixed inset-x-0 bottom-0 z-[100] border-t border-hairline bg-[#0a0e14]/95 p-4 text-sm text-ink backdrop-blur md:p-5">
       <div className="mx-auto flex max-w-5xl flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <p className="max-w-2xl text-black/80">
+        <p className="max-w-2xl text-ink/70">
           Wir verwenden notwendige Cookies für den Betrieb der Website und – mit
           Ihrer Einwilligung – optionale Cookies für Statistik und Marketing.
           Details in der{" "}
-          <a href="/legal/cookies" className="underline">
+          <a href="/legal/cookies" className="text-primary underline">
             Cookie-Richtlinie
           </a>{" "}
           und{" "}
-          <a href="/legal/datenschutz" className="underline">
+          <a href="/legal/datenschutz" className="text-primary underline">
             Datenschutzerklärung
           </a>
           .
@@ -54,13 +54,13 @@ export function CookieConsent() {
         <div className="flex shrink-0 gap-2">
           <button
             onClick={() => save(false, false)}
-            className="rounded-md border border-black/20 px-4 py-2 font-medium hover:bg-black/5"
+            className="rounded-md border border-hairline px-4 py-2 font-medium text-ink hover:bg-white/5"
           >
             Nur notwendige
           </button>
           <button
             onClick={() => save(true, true)}
-            className="rounded-md bg-black px-4 py-2 font-medium text-white hover:bg-black/80"
+            className="rounded-md bg-primary px-4 py-2 font-medium text-[#0d1117] hover:opacity-90"
           >
             Alle akzeptieren
           </button>

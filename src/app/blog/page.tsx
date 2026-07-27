@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { getPosts } from "@/lib/posts";
 
-export const metadata = { title: "Journal — North Leather" };
+export const metadata = {
+  title: "Journal — North Leather",
+  description: "Notes on materials, craft and the bench behind North Leather's full-grain bags.",
+  alternates: { canonical: "/blog" },
+};
 
 export default function BlogIndex() {
   const posts = getPosts();

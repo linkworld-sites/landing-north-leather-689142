@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 
 const STATS = [
-  { value: 100, suffix: "%", label: "Full-grain leather" },
-  { value: 9, suffix: "", label: "Stitches per inch" },
-  { value: 0, suffix: "", label: "Lifetime repair", display: "∞" },
-  { value: 0, suffix: "", label: "Planned obsolescence", display: "0" },
+  { value: 100, suffix: "%", label: "full-grain leather" },
+  { value: 9, suffix: "", label: "stitches per inch" },
+  { value: 0, suffix: "", label: "lifetime repair", display: "∞" },
+  { value: 0, suffix: "", label: "planned obsolescence", display: "0" },
 ];
 
 function CountUp({ value, suffix, display }: { value: number; suffix: string; display?: string }) {
@@ -34,7 +34,7 @@ function CountUp({ value, suffix, display }: { value: number; suffix: string; di
   }, [inView, value, display]);
 
   return (
-    <span ref={ref} className="font-display text-[4.5rem] font-light leading-none text-white md:text-[5.5rem]">
+    <span ref={ref} className="font-display text-[4.5rem] font-bold leading-none text-primary md:text-[5.5rem]">
       {display ?? n}
       {suffix}
     </span>
@@ -43,17 +43,17 @@ function CountUp({ value, suffix, display }: { value: number; suffix: string; di
 
 export function NumbersBand() {
   return (
-    <section className="relative bg-ink py-24 text-center">
+    <section className="relative border-y border-hairline bg-[#0a0e14] py-24 text-center">
       <motion.p
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto mb-16 max-w-md px-6 text-[13px] uppercase tracking-[0.18em] text-white/60"
+        className="mx-auto mb-16 max-w-md px-6 text-[13px] tracking-[0.1em] text-ink/60"
       >
-        No gimmicks. Just the material doing what it was always able to do.
+        <span className="text-accent">// </span>no gimmicks. just the material doing what it was always able to do.
       </motion.p>
-      <div className="mx-auto grid max-w-5xl grid-cols-1 divide-y divide-white/10 px-6 md:grid-cols-4 md:divide-y-0 md:divide-x md:px-16">
+      <div className="mx-auto grid max-w-5xl grid-cols-1 divide-y divide-hairline px-6 md:grid-cols-4 md:divide-y-0 md:divide-x md:px-16">
         {STATS.map((s, i) => (
           <motion.div
             key={s.label}
@@ -64,7 +64,7 @@ export function NumbersBand() {
             className="flex flex-col items-center gap-3 py-8 md:py-0"
           >
             <CountUp value={s.value} suffix={s.suffix} display={s.display} />
-            <span className="text-[11px] uppercase tracking-[0.2em] text-white/50">
+            <span className="text-[11px] tracking-[0.12em] text-ink/50">
               {s.label}
             </span>
           </motion.div>

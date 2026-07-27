@@ -5,6 +5,7 @@ import { SuccessClient } from "./SuccessClient";
 export const metadata = {
   title: "Order confirmed — North Leather",
   description: "Thank you for your order.",
+  alternates: { canonical: "/checkout/success" },
 };
 
 export default function CheckoutSuccessPage() {

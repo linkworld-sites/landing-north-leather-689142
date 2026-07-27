@@ -1,8 +1,26 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { CartProvider } from "@/components/CartContext";
 import { fetchProducts, formatPrice } from "@/lib/checkout";
+import { SITE_URL } from "@/lib/site";
 import { ProductActions } from "./ProductActions";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const products = await fetchProducts();
+  const product = products.find((p) => p.id === id);
+  if (!product) return {};
+  return {
+    title: `${product.name} — North Leather`,
+    description: product.description || `${product.name} — full-grain leather, ${formatPrice(product.price_cents, product.currency)}.`,
+    alternates: { canonical: `/product/${product.id}` },
+  };
+}
 
 export default async function ProductPage({
   params,
@@ -14,8 +32,31 @@ export default async function ProductPage({
   const product = products.find((p) => p.id === id);
   if (!product) notFound();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description || undefined,
+    image: product.image_url || undefined,
+    url: `${SITE_URL}/product/${product.id}`,
+    offers: {
+      "@type": "Offer",
+      priceCurrency: product.currency || "EUR",
+      price: (product.price_cents / 100).toFixed(2),
+      availability:
+        product.stock === 0
+          ? "https://schema.org/OutOfStock"
+          : "https://schema.org/InStock",
+      url: `${SITE_URL}/product/${product.id}`,
+    },
+  };
+
   return (
     <main className="min-h-screen bg-gallery px-6 py-28 md:px-16 md:py-36">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mx-auto max-w-4xl">
         <Link
           href="/shop"

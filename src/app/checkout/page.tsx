@@ -5,6 +5,7 @@ import { CheckoutClient } from "./CheckoutClient";
 export const metadata = {
   title: "Checkout — North Leather",
   description: "Complete your order.",
+  alternates: { canonical: "/checkout" },
 };
 
 export default function CheckoutPage() {

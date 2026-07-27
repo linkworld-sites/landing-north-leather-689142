@@ -13,11 +13,11 @@ import {
 import { FadeUp } from "./FadeUp";
 
 const FRAMES = [
-  { tick: "0", label: "Day 1", src: "/images/hero.png", caption: "Stiff at the fold. Bright at the edge. Exactly as it left the bench." },
-  { tick: "6mo", label: "Month 6", src: "/images/material.png", caption: "The strap darkens where your hand rests." },
-  { tick: "2yr", label: "Year 2", src: "/images/detail.png", caption: "Corners round, they don't crack." },
-  { tick: "5yr", label: "Year 5", src: "/images/process.png", caption: "Grain deepens like a sun-worn deck rail." },
-  { tick: "10yr", label: "Year 10", src: "/images/hero.png", caption: "Ten years in, and it's only just broken in." },
+  { tick: "0", label: "day_01", src: "/images/hero.png", caption: "// stiff at the fold. bright at the edge. exactly as it left the bench." },
+  { tick: "6mo", label: "month_06", src: "/images/material.png", caption: "// the strap darkens where your hand rests." },
+  { tick: "2yr", label: "year_02", src: "/images/detail.png", caption: "// corners round, they don't crack." },
+  { tick: "5yr", label: "year_05", src: "/images/process.png", caption: "// grain deepens like a sun-worn deck rail." },
+  { tick: "10yr", label: "year_10", src: "/images/hero.png", caption: "// ten years in, and it's only just broken in." },
 ];
 
 const N = FRAMES.length;
@@ -33,7 +33,7 @@ function Caption({ i, progress }: { i: number; progress: MotionValue<number> }) 
   return (
     <motion.p
       style={{ opacity }}
-      className="mt-6 max-w-[26ch] font-display text-[15px] italic leading-snug text-ink/80 md:text-[17px]"
+      className="mt-6 max-w-[30ch] text-[13px] leading-snug text-accent/90 md:text-[14px]"
     >
       {FRAMES[i].caption}
     </motion.p>
@@ -51,7 +51,7 @@ function Tick({ i, progress }: { i: number; progress: MotionValue<number> }) {
   const color = useTransform(
     progress,
     [center - w, center - w * 0.35, center + w * 0.35, center + w],
-    ["#C9C4B8", "#8A2E1E", "#8A2E1E", "#C9C4B8"],
+    ["#1e2a24", "#39ff14", "#39ff14", "#1e2a24"],
   );
   return (
     <div className="flex flex-1 flex-col items-center gap-2">
@@ -59,7 +59,7 @@ function Tick({ i, progress }: { i: number; progress: MotionValue<number> }) {
         className="h-2 w-2 rounded-full"
         style={{ scale, backgroundColor: color }}
       />
-      <span className="text-[10px] uppercase tracking-[0.18em] text-ink/50">
+      <span className="text-[10px] tracking-[0.14em] text-ink/50">
         {FRAMES[i].tick}
       </span>
     </div>
@@ -72,18 +72,18 @@ export function PatinaLedger() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
 
   const trackX = useTransform(scrollYProgress, [0, 1], ["0%", `-${(N - 1) * 100}%`]);
-  const gray = useTransform(scrollYProgress, [0, 1], [55, 8]);
-  const sepia = useTransform(scrollYProgress, [0, 1], [0, 50]);
-  const filter = useMotionTemplate`grayscale(${gray}%) sepia(${sepia}%) contrast(1.04)`;
+  const gray = useTransform(scrollYProgress, [0, 1], [65, 15]);
+  const hue = useTransform(scrollYProgress, [0, 1], [90, 100]);
+  const filter = useMotionTemplate`grayscale(${gray}%) sepia(20%) hue-rotate(${hue}deg) contrast(1.05) brightness(0.92)`;
 
   return (
     <section id="ledger" className="relative bg-gallery">
       <div className="px-6 pt-28 text-center md:px-16">
-        <p className="text-[11px] uppercase tracking-[0.22em] text-ink/50">
-          Exhibit 03 — The Patina Ledger
+        <p className="text-[11px] tracking-[0.22em] text-accent/80">
+          <span className="text-primary">❯</span> exhibit_03 --patina-ledger
         </p>
         <FadeUp className="mx-auto mt-4 max-w-2xl">
-          <h2 className="font-display text-[2rem] font-light leading-tight text-ink md:text-[2.75rem]">
+          <h2 className="font-display text-[1.85rem] font-bold leading-tight text-white md:text-[2.5rem]">
             One bag, photographed the same way, ten years apart.
           </h2>
         </FadeUp>
@@ -101,7 +101,7 @@ export function PatinaLedger() {
                   key={i}
                   className="relative flex h-full w-full shrink-0 items-center justify-center px-6 md:px-24"
                 >
-                  <div className="relative h-full w-full max-w-[560px] overflow-hidden rounded-sm border border-hairline/50 bg-wall shadow-[0_20px_50px_-25px_rgba(43,27,18,0.3)]">
+                  <div className="relative h-full w-full max-w-[560px] overflow-hidden rounded-sm border border-hairline bg-wall shadow-[0_20px_50px_-25px_rgba(0,0,0,0.6)]">
                     <Image
                       src={f.src}
                       alt={`North Leather satchel — ${f.label}`}
@@ -109,6 +109,9 @@ export function PatinaLedger() {
                       className="object-cover"
                       sizes="60vw"
                     />
+                    <span className="absolute left-3 top-3 border border-hairline bg-black/50 px-2 py-1 text-[10px] tracking-[0.1em] text-primary backdrop-blur-sm">
+                      {f.label}.jpg
+                    </span>
                   </div>
                 </div>
               ))}
@@ -124,7 +127,7 @@ export function PatinaLedger() {
           </div>
 
           <div className="mx-auto mt-10 flex w-full max-w-2xl items-center gap-0 px-8 md:px-0">
-            <div className="relative h-px flex-1 bg-hairline/60" />
+            <div className="relative h-px flex-1 bg-hairline" />
           </div>
           <div className="mx-auto flex w-full max-w-2xl px-8 md:px-0">
             {FRAMES.map((_, i) => (
@@ -135,14 +138,17 @@ export function PatinaLedger() {
       </div>
 
       <div className="px-6 pb-32 pt-8 md:px-16">
-        <FadeUp className="mx-auto flex max-w-md flex-col items-center gap-4 rounded-sm border border-hairline/60 bg-wall/60 p-8 text-center">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-ink/50">Object Label</p>
-          <p className="font-display text-[15px] italic text-ink/80">
-            No. 04 Satchel, Serial NL-0412 — Purchased 2016. Repaired once, 2022.
-            Still in daily use.
+        <FadeUp className="mx-auto flex max-w-md flex-col items-center gap-4 rounded-sm border border-hairline bg-wall/60 p-8 text-center">
+          <p className="text-[11px] tracking-[0.22em] text-accent/70">
+            <span className="text-primary">❯</span> cat object_label.txt
           </p>
-          <p className="text-[11px] uppercase tracking-[0.2em] text-ink/40">
-            Receipt on file · Lifetime repair honored
+          <p className="text-[14px] text-ink/90">
+            no.04 satchel · serial NL-0412 · purchased 2016
+            <br />
+            repaired once, 2022 · still in daily use
+          </p>
+          <p className="text-[11px] tracking-[0.14em] text-ink/40">
+            receipt on file · lifetime repair honored
           </p>
         </FadeUp>
       </div>

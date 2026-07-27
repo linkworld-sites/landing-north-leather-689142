@@ -6,6 +6,7 @@ import { fetchProducts, formatPrice } from "@/lib/checkout";
 export const metadata = {
   title: "Shop — North Leather",
   description: "Full-grain leather bags built to age beautifully and last a lifetime.",
+  alternates: { canonical: "/shop" },
 };
 
 export default async function ShopPage() {

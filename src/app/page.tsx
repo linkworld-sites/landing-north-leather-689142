@@ -1,28 +1,27 @@
-// Signature moment: The Patina Ledger is a single satchel photographed on the
-// same seamless, same light, at five real ages — the ONE proof no competitor
-// leather brand can borrow, because it's provenance, not a template.
+// This brand's signature: the "Patina Ledger" exhibit — a scroll-scrubbed,
+// museum-label proof strip of ONE real satchel aging ten years, framed as a
+// terminal file listing (day_01.jpg … year_10.jpg) instead of a gallery.
+// No competitor's product photography could stand in for it.
 import { Header } from "@/components/north/Header";
 import { Hero } from "@/components/north/Hero";
-import { StickyShowcase } from "@/components/north/StickyShowcase";
 import { PatinaLedger } from "@/components/north/PatinaLedger";
-import { QuotePanel } from "@/components/north/QuotePanel";
+import { Marquee } from "@/components/north/Marquee";
 import { NumbersBand } from "@/components/north/NumbersBand";
-import { TimelineRows } from "@/components/north/TimelineRows";
-import { SplitCTA } from "@/components/north/SplitCTA";
+import { StepsRail } from "@/components/north/StepsRail";
+import { CTA } from "@/components/north/CTA";
 import { Footer } from "@/components/north/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gallery">
+    <>
       <Header />
       <Hero />
-      <StickyShowcase />
       <PatinaLedger />
-      <QuotePanel />
+      <Marquee />
       <NumbersBand />
-      <TimelineRows />
-      <SplitCTA />
+      <StepsRail />
+      <CTA />
       <Footer />
-    </main>
+    </>
   );
 }
