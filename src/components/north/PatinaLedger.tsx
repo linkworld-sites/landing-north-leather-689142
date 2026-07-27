@@ -51,7 +51,7 @@ function Tick({ i, progress }: { i: number; progress: MotionValue<number> }) {
   const color = useTransform(
     progress,
     [center - w, center - w * 0.35, center + w * 0.35, center + w],
-    ["#3a2a20", "#c17c62", "#c17c62", "#3a2a20"],
+    ["#4a4038", "#8a3324", "#8a3324", "#4a4038"],
   );
   return (
     <div className="flex flex-1 flex-col items-center gap-2">

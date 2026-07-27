@@ -104,7 +104,7 @@ export function CheckoutClient() {
         type="button"
         onClick={onComplete}
         disabled={busy}
-        className="mt-8 w-full bg-primary px-5 py-3 text-sm uppercase tracking-wide text-[#1b120c] transition-opacity hover:opacity-90 disabled:opacity-50"
+        className="mt-8 w-full bg-primary px-5 py-3 text-sm uppercase tracking-wide text-[#1a1613] transition-opacity hover:opacity-90 disabled:opacity-50"
       >
         {busy ? "Starting checkout…" : "Complete purchase"}
       </button>
