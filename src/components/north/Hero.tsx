@@ -21,7 +21,7 @@ export function Hero() {
         className="fixed inset-0 z-0 h-screen w-full"
         style={reduced ? undefined : { scale: videoScale }}
       >
-        <VideoLoop src="/videos/hero.mp4" poster="/images/hero.png" />
+        <VideoLoop src="/videos/hero.mp4" poster="/images/hero-workshop.png" />
         <div
           className="absolute inset-0"
           style={{
