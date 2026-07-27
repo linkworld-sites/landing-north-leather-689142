@@ -5,8 +5,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const LINKS = [
-  { href: "/#ledger", label: "The Ledger" },
-  { href: "/blog", label: "Journal" },
+  { href: "/#ledger", label: "The Ledger", hideOnMobile: true },
+  { href: "/shop", label: "Shop", hideOnMobile: false },
+  { href: "/blog", label: "Journal", hideOnMobile: false },
 ];
 
 function NavLink({ href, label, dark }: { href: string; label: string; dark: boolean }) {
@@ -48,8 +49,8 @@ export function Header() {
         NORTH LEATHER
       </Link>
       <nav className="flex items-center gap-4 sm:gap-8">
-        {LINKS.map((l, i) => (
-          <span key={l.href} className={i === 0 ? "hidden sm:inline-flex" : "inline-flex"}>
+        {LINKS.map((l) => (
+          <span key={l.href} className={l.hideOnMobile ? "hidden sm:inline-flex" : "inline-flex"}>
             <NavLink href={l.href} label={l.label} dark={solid} />
           </span>
         ))}

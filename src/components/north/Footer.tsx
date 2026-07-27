@@ -8,6 +8,7 @@ export function Footer() {
           North Leather
         </span>
         <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
+          <Link href="/shop" className="hover:text-white/80">Shop</Link>
           <Link href="/blog" className="hover:text-white/80">Journal</Link>
           <Link href="/legal/privacy" className="hover:text-white/80">Privacy</Link>
           <Link href="/legal/cookies" className="hover:text-white/80">Cookies</Link>
