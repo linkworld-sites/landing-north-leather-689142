@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><style id='brand'>:root{
+  --bg:#0b0b0c; --surface:#141417; --surface-2:#1c1c21;
+  --fg:#f5f5f7; --fg-muted:#a1a1aa; --border:#26262b;
+  --accent:#3b82f6; --accent-fg:#fff; --radius:14px; --maxw:1100px;
+  --font:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.section{padding:96px 0}
+.hero{padding:140px 0 90px;text-align:center}
+h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.01em}
+.muted{color:var(--fg-muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--accent-fg);padding:14px 28px;border-radius:var(--radius);font-weight:600;text-decoration:none;border:0;cursor:pointer;transition:transform .15s ease,opacity .15s ease}
+.btn:hover{transform:translateY(-2px);opacity:.92}
+.btn-ghost{background:transparent;color:var(--fg);border:1px solid var(--border)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+.grid{display:grid;gap:24px}
+@media(max-width:640px){.section{padding:64px 0}.hero{padding:96px 0 64px}}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>North Leather — Made to Outlast the Trend</title>
+<style>
+  :root{
+    --accent: #7a4a2b;
+    --stitch: #c9a869;
+  }
+  body{
+    background:
+      radial-gradient(circle at 20% 0%, rgba(122,74,43,0.06), transparent 45%),
+      var(--bg);
+  }
+
+  /* ---------- HERO ---------- */
+  .nl-hero{
+    position:relative;
+    overflow:hidden;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    border-bottom:1px solid var(--border);
+  }
+  .nl-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      repeating-linear-gradient(115deg, transparent 0 60px, rgba(122,74,43,0.035) 60px 61px),
+      repeating-linear-gradient(25deg, transparent 0 60px, rgba(122,74,43,0.035) 60px 61px);
+    pointer-events:none;
+  }
+  .nl-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    font-size:.75rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--accent);
+    border:1px solid var(--border);
+    padding:.4rem .9rem;
+    border-radius:999px;
+    background:var(--surface);
+  }
+  .nl-eyebrow::before{
+    content:"";
+    width:6px;height:6px;border-radius:50%;
+    background:var(--stitch);
+  }
+  .nl-hero h1{
+    font-size:clamp(2.4rem, 5.5vw, 4.2rem);
+    line-height:1.05;
+    margin: 1.2rem 0 1rem;
+    letter-spacing:-0.02em;
+    max-width: 15ch;
+  }
+  .nl-hero h1 em{
+    font-style:italic;
+    color:var(--accent);
+  }
+  .nl-hero p.lead{
+    font-size:1.15rem;
+    max-width:42ch;
+    color:var(--fg-muted);
+  }
+  .nl-hero-actions{
+    display:flex;
+    gap:1rem;
+    margin-top:2rem;
+    flex-wrap:wrap;
+  }
+  .nl-hero-visual{
+    position:relative;
+    height:100%;
+    min-height:340px;
+    border-radius: var(--radius);
+    border:1px solid var(--border);
+    background:
+      linear-gradient(160deg, #5c3a24, #7a4a2b 45%, #a06b3f 100%);
+    box-shadow: 0 30px 60px -25px rgba(80,45,20,0.45);
+    overflow:hidden;
+  }
+  .nl-hero-visual::after{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      repeating-linear-gradient(90deg, transparent 0 3px, rgba(0,0,0,0.06) 3px 4px),
+      radial-gradient(circle at 70% 20%, rgba(255,255,255,0.12), transparent 40%);
+  }
+  .nl-stitchline{
+    position:absolute;
+    border: 1.5px dashed rgba(255,248,235,0.5);
+    border-radius: 14px;
+  }
+  .nl-badge{
+    position:absolute;
+    bottom:1.4rem; left:1.4rem;
+    background:rgba(20,14,8,0.55);
+    backdrop-filter:blur(4px);
+    color:#f6ead9;
+    padding:.7rem 1rem;
+    border-radius: 10px;
+    font-size:.85rem;
+    border:1px solid rgba(255,255,255,0.15);
+  }
+  .nl-badge b{ display:block; font-size:1.2rem; }
+
+  /* ---------- STATS STRIP ---------- */
+  .nl-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .nl-stats div{
+    padding:1.5rem 1rem;
+    text-align:center;
+    border-right:1px solid var(--border);
+  }
+  .nl-stats div:last-child{ border-right:none; }
+  .nl-stats strong{
+    display:block;
+    font-size:1.6rem;
+    color:var(--accent);
+  }
+  .nl-stats span{ font-size:.8rem; color:var(--fg-muted); }
+
+  /* ---------- FEATURES ---------- */
+  .feat-card{
+    position:relative;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .feat-card:hover{
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px -25px rgba(122,74,43,0.5);
+  }
+  .feat-icon{
+    width:44px;height:44px;
+    border-radius:10px;
+    background: rgba(122,74,43,0.12);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--accent);
+    margin-bottom:1rem;
+    font-size:1.3rem;
+  }
+
+  /* ---------- PROCESS ---------- */
+  .nl-process{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1.5rem;
+    counter-reset: step;
+  }
+  .nl-step{
+    position:relative;
+    padding-top:2rem;
+  }
+  .nl-step::before{
+    counter-increment: step;
+    content: counter(step);
+    position:absolute;
+    top:0; left:0;
+    font-size:.85rem;
+    width:2rem;height:2rem;
+    border-radius:50%;
+    border:1px solid var(--accent);
+    color:var(--accent);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:600;
+  }
+
+  /* ---------- PRICING ---------- */
+  .price-card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+  }
+  .price-card.featured{
+    border-color: var(--accent);
+    background: linear-gradient(160deg, rgba(122,74,43,0.08), transparent);
+  }
+  .price-card .tag{
+    position:absolute; top:-.7rem; right:1.2rem;
+    background:var(--accent);
+    color:#fff8ee;
+    font-size:.7rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:.3rem .7rem;
+    border-radius:999px;
+  }
+  .price-card .amount{
+    font-size:2.2rem;
+    margin:0;
+  }
+  .price-card .amount span{
+    font-size:.9rem;
+    color:var(--fg-muted);
+    font-weight:400;
+  }
+  .price-card ul{
+    list-style:none;
+    padding:0; margin:0;
+    display:flex; flex-direction:column; gap:.6rem;
+    color:var(--fg-muted);
+    font-size:.92rem;
+  }
+  .price-card ul li::before{
+    content:"— ";
+    color:var(--accent);
+  }
+
+  /* reveal on scroll (visible by default) */
+  .reveal{
+    animation: rise .7s ease both;
+  }
+  @keyframes rise{
+    from{ opacity:0; transform: translateY(14px); }
+    to{ opacity:1; transform:none; }
+  }
+
+  footer.site-footer{
+    border-top:1px solid var(--border);
+    padding: 3rem 0 2rem;
+  }
+  .foot-grid{
+    display:grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap:2rem;
+  }
+  .foot-grid h4{
+    font-size:.85rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    margin-bottom:.8rem;
+    color:var(--fg-muted);
+  }
+  .foot-grid a{
+    display:block;
+    color:var(--fg-muted);
+    text-decoration:none;
+    font-size:.92rem;
+    margin-bottom:.5rem;
+    transition:color .2s;
+  }
+  .foot-grid a:hover{ color:var(--accent); }
+  .foot-bottom{
+    margin-top:2.5rem;
+    padding-top:1.5rem;
+    border-top:1px solid var(--border);
+    display:flex;
+    justify-content:space-between;
+    font-size:.8rem;
+    color:var(--fg-muted);
+    flex-wrap:wrap;
+    gap:1rem;
+  }
+
+  @media (max-width: 860px){
+    .nl-stats{ grid-template-columns:repeat(2,1fr); }
+    .nl-stats div:nth-child(2){ border-right:none; }
+    .nl-process{ grid-template-columns:repeat(2,1fr); }
+    .foot-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width: 560px){
+    .nl-process{ grid-template-columns:1fr; }
+    .foot-grid{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="container" style="display:flex;align-items:center;justify-content:space-between;padding:1.5rem 1.5rem 0;">
+  <div style="display:flex;align-items:center;gap:.6rem;font-weight:700;letter-spacing:.02em;">
+    <div style="width:32px;height:32px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff8ee;font-size:.9rem;">NL</div>
+    North Leather
+  </div>
+  <nav style="display:flex;gap:1.6rem;align-items:center;" class="muted">
+    <a href="#features" style="color:inherit;text-decoration:none;">Craft</a>
+    <a href="#pricing" style="color:inherit;text-decoration:none;">Collection</a>
+    <a href="#footer" style="color:inherit;text-decoration:none;">Care</a>
+    <a href="#pricing" class="btn" style="padding:.55rem 1.2rem;">Shop Now</a>
+  </nav>
+</header>
+
+<section class="nl-hero">
+  <div class="container" style="position:relative;display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:center;">
+    <div class="reveal">
+      <span class="nl-eyebrow">Full-Grain · Hand-Finished · Made to Age Well</span>
+      <h1>Bags built to be <em>lived in</em>, not replaced.</h1>
+      <p class="lead">North Leather crafts full-grain handbags and totes from vegetable-tanned hides — pieces that soften, darken, and grow more beautiful with every year you carry them.</p>
+      <div class="nl-hero-actions">
+        <a href="#pricing" class="btn">Explore the Collection</a>
+        <a href="#features" class="btn btn-ghost">Why Full-Grain?</a>
+      </div>
+    </div>
+    <div class="nl-hero-visual reveal" style="animation-delay:.1s;">
+      <div class="nl-stitchline" style="top:12%;left:8%;right:8%;bottom:12%;"></div>
+      <div class="nl-badge">
+        <b>10-Year</b>
+        Craftsmanship Guarantee
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="nl-stats">
+  <div><strong>100%</strong><span>Full-grain leather</span></div>
+  <div><strong>30+</strong><span>Hand finishing steps</span></div>
+  <div><strong>10 yrs</strong><span>Guarantee on hardware & stitching</span></div>
+  <div><strong>4.9★</strong><span>from 6,200+ owners</span></div>
+</div>
+
+<section class="section container" id="features">
+  <div style="max-width:640px;margin-bottom:2.5rem;" class="reveal">
+    <h2 style="font-size:2rem;margin-bottom:.6rem;">Leather that earns its patina.</h2>
+    <p class="muted">Everything mass-market bags avoid — real hides, visible stitching, honest wear — is exactly what we build for. A North Leather bag looks better in year three than it did on day one.</p>
+  </div>
+
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+    <div class="card feat-card reveal">
+      <div class="feat-icon">◈</div>
+      <h3 style="margin:.2rem 0;">Vegetable-Tanned Hides</h3>
+      <p class="muted">Sourced from small tanneries using traditional, low-impact tanning — no shortcuts, no synthetic coatings hiding the grain.</p>
+    </div>
+    <div class="card feat-card reveal" style="animation-delay:.05s;">
+      <div class="feat-icon">✎</div>
+      <h3 style="margin:.2rem 0;">Hand-Cut & Hand-Stitched</h3>
+      <p class="muted">Every panel is cut, skived, and saddle-stitched by hand — the same technique that's held leather goods together for centuries.</p>
+    </div>
+    <div class="card feat-card reveal" style="animation-delay:.1s;">
+      <div class="feat-icon">⟲</div>
+      <h3 style="margin:.2rem 0;">Repair, Not Replace</h3>
+      <p class="muted">Free restitching and hardware repair for 10 years. Send it back, we'll bring it back to life — that's the whole point of real leather.</p>
+    </div>
+  </div>
+
+  <div class="nl-process" style="margin-top:3.5rem;">
+    <div class="nl-step reveal"><h4 style="margin:.3rem 0;">Select the Hide</h4><p class="muted" style="font-size:.9rem;">Each hide graded by hand for grain quality and character.</p></div>
+    <div class="nl-step reveal" style="animation-delay:.05s;"><h4 style="margin:.3rem 0;">Cut & Skive</h4><p class="muted" style="font-size:.9rem;">Patterns laid to minimize waste, edges thinned by hand.</p></div>
+    <div class="nl-step reveal" style="animation-delay:.1s;"><h4 style="margin:.3rem 0;">Saddle Stitch</h4><p class="muted" style="font-size:.9rem;">Two needles, one thread — stronger than any machine lockstitch.</p></div>
+    <div class="nl-step reveal" style="animation-delay:.15s;"><h4 style="margin:.3rem 0;">Burnish & Finish</h4><p class="muted" style="font-size:.9rem;">Edges burnished, hardware set, oiled for its first patina.</p></div>
+  </div>
+</section>
+
+<section class="section container" id="pricing">
+  <div style="text-align:center;max-width:600px;margin:0 auto 2.5rem;" class="reveal">
+    <h2 style="font-size:2rem;margin-bottom:.6rem;">The Collection</h2>
+    <p class="muted">Three silhouettes, one philosophy — fewer bags, made to last decades.</p>
+  </div>
+
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch;">
+    <div class="card price-card reveal">
+      <h3 style="margin:0;">The Weekday Tote</h3>
+      <p class="amount">$285<span>/ one bag, forever</span></p>
+      <ul>
+        <li>Full-grain vegetable-tanned leather</li>
+        <li>Interior laptop sleeve</li>
+        <li>Solid brass hardware</li>
+        <li>10-year repair guarantee</li>
+      </ul>
+      <a href="#" class="btn btn-ghost" style="margin-top:auto;">Shop the Tote</a>
+    </div>
+
+    <div class="card price-card featured reveal" style="animation-delay:.05s;">
+      <span class="tag">Best Seller</span>
+      <h3 style="margin:0;">The North Satchel</h3>
+      <p class="amount">$365<span>/ one bag, forever</span></p>
+      <ul>
+        <li>Structured full-grain body</li>
+        <li>Adjustable crossbody strap</li>
+        <li>Hand-burnished edges</li>
+        <li>10-year repair guarantee</li>
+      </ul>
+      <a href="#" class="btn" style="margin-top:auto;">Shop the Satchel</a>
+    </div>
+
+    <div class="card price-card reveal" style="animation-delay:.1s;">
+      <h3 style="margin:0;">The Everyday Crossbody</h3>
+      <p class="amount">$225<span>/ one bag, forever</span></p>
+      <ul>
+        <li>Compact, lightweight build</li>
+        <li>Antique brass buckle closure</li>
+        <li>Hidden zip pocket</li>
+        <li>10-year repair guarantee</li>
+      </ul>
+      <a href="#" class="btn btn-ghost" style="margin-top:auto;">Shop the Crossbody</a>
+    </div>
+  </div>
+  <p class="muted" style="text-align:center;margin-top:1.5rem;font-size:.85rem;">Free shipping & returns · Ships in 2–4 days · Ask about custom monogramming</p>
+</section>
+
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:.6rem;font-weight:700;margin-bottom:.8rem;">
+          <div style="width:28px;height:28px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff8ee;font-size:.8rem;">NL</div>
+          North Leather
+        </div>
+        <p class="muted" style="max-width:32ch;font-size:.9rem;">Full-grain bags, built by hand, guaranteed for a decade — and made to be worth repairing long after.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="#pricing">Totes</a>
+        <a href="#pricing">Satchels</a>
+        <a href="#pricing">Crossbody</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#features">Our Craft</a>
+        <a href="#">Sourcing</a>
+        <a href="#">Journal</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="#">Repairs & Care</a>
+        <a href="#">Shipping</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 North Leather. All rights reserved.</span>
+      <span>Full-grain leather · Made to outlast the trend.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Subtle scroll-triggered emphasis (content already visible without JS)
+  const els = document.querySelectorAll('.reveal, .card, .nl-step');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.style.animationPlayState = 'running';
+        e.target.classList.add('in-view');
+      }
+    });
+  }, {threshold:0.15});
+  els.forEach(el=> io.observe(el));
+
+  // Gentle parallax on hero visual
+  const visual = document.querySelector('.nl-hero-visual');
+  window.addEventListener('mousemove', (e)=>{
+    if(!visual) return;
+    const x = (e.clientX / window.innerWidth - 0.5) * 8;
+    const y = (e.clientY / window.innerHeight - 0.5) * 8;
+    visual.style.transform = `translate(${x}px, ${y}px)`;
+  });
+
+  // Header shadow on scroll
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > 20){
+      header.style.boxShadow = '0 6px 20px -18px rgba(0,0,0,0.4)';
+    } else {
+      header.style.boxShadow = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
