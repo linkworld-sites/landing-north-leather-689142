@@ -5,15 +5,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gallery: "#0d1117",
-        wall: "#131a24",
-        cream: "#0f151f",
-        ink: "#c3d1cd",
-        primary: "#39ff14",
-        secondary: "#ffb000",
-        accent: "#56d4dd",
-        magenta: "#ff5fd1",
-        hairline: "#1e2a24",
+        gallery: "#1b120c",
+        wall: "#241a13",
+        cream: "#ecd9c9",
+        ink: "#f7f0e6",
+        primary: "#c17c62",
+        secondary: "#a8b596",
+        accent: "#c17c62",
+        magenta: "#e3b9ab",
+        hairline: "#3a2a20",
       },
       fontFamily: {
         display: ["var(--font-mono)", "monospace"],

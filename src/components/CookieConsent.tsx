@@ -60,7 +60,7 @@ export function CookieConsent() {
           </button>
           <button
             onClick={() => save(true, true)}
-            className="rounded-md bg-primary px-4 py-2 font-medium text-[#0d1117] hover:opacity-90"
+            className="rounded-md bg-primary px-4 py-2 font-medium text-[#1b120c] hover:opacity-90"
           >
             Alle akzeptieren
           </button>

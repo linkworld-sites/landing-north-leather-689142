@@ -43,7 +43,7 @@ export function StepsRail() {
               y1="0"
               x2="100%"
               y2="0"
-              stroke="#1e2a24"
+              stroke="#3a2a20"
               strokeWidth="1"
               initial={reduced ? undefined : { pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
@@ -87,7 +87,7 @@ export function StepsRail() {
               y1="0"
               x2="0"
               y2="100%"
-              stroke="#1e2a24"
+              stroke="#3a2a20"
               strokeWidth="1"
               initial={reduced ? undefined : { pathLength: 0 }}
               whileInView={{ pathLength: 1 }}

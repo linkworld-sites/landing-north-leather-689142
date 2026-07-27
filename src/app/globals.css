@@ -12,8 +12,8 @@ html.lenis body {
 }
 
 body {
-  background: #0d1117;
-  color: #c3d1cd;
+  background: #1b120c;
+  color: #f7f0e6;
 }
 
 @keyframes blink-cursor {
@@ -35,8 +35,8 @@ body {
   z-index: 1;
   background: repeating-linear-gradient(
     to bottom,
-    rgba(57, 255, 20, 0.025) 0px,
-    rgba(57, 255, 20, 0.025) 1px,
+    rgba(193, 124, 98, 0.025) 0px,
+    rgba(193, 124, 98, 0.025) 1px,
     transparent 1px,
     transparent 3px
   );
